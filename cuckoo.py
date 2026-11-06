@@ -77,4 +77,13 @@ if __name__ == "__main__":
     best_route, best_dist = discrete_cuckoo_search(mock_matrix, cities)
    
     print("Best Route:", best_route)
-    print("Best Distance:", best_dist)
+    print("\n--- Route Breakdown ---")
+    for i in range(len(best_route)):
+        city_a = best_route[i]
+        city_b = best_route[(i + 1) % len(best_route)]
+        segment_dist = mock_matrix[city_a][city_b]
+        print(f"City {city_a} to City {city_b} = {segment_dist}")
+       
+    print("-----------------------")
+    print("Total Best Distance:", best_dist)
+
